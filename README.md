@@ -34,10 +34,11 @@ Estas son las principales dependencias utilizadas en el proyecto:
 - ts-node: ^10.9.2
 - typescript: ^5.4.5
 
+## Instalación e inicialización
 #### 1. Clona este repositorio en tu máquina local:
 
 ```bash
-  git clone https://github.com/MiguelZea12/app_backend.git
+  https://github.com/Julius266/Backend-PR.git
 ```
 
 #### 2. Inicia el contenedor Docker:
