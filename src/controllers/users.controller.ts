@@ -6,6 +6,10 @@ import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
+
+
+
+
 // getAllUsers
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -16,6 +20,8 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+
 
 // createUser
 export const createUser = async (req: Request, res: Response): Promise<void> => {
@@ -40,6 +46,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
