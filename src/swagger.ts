@@ -1,4 +1,3 @@
-import { format } from "path";
 import swaggerJSDoc, { OAS3Definition, OAS3Options } from "swagger-jsdoc";
 
 const swaggerDefinition: OAS3Definition = {
