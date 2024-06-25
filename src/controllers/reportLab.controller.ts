@@ -23,6 +23,7 @@ export const getAllSchoolReports = async (req: Request, res: Response): Promise<
 export const createSchoolReport = async (req: Request, res: Response): Promise<void> => {
     const {
       school,
+      report_name,
       date,
       course,
       subject,
@@ -41,6 +42,7 @@ export const createSchoolReport = async (req: Request, res: Response): Promise<v
       const newSchoolReport = await prisma.schoolReport.create({
         data: {
           school,
+          report_name,
           date: new Date(date),
           course,
           subject,

@@ -23,6 +23,7 @@ export const getAllInternshipReports = async (req: Request, res: Response): Prom
 export const createInternshipReport = async (req: Request, res: Response): Promise<void> => {
     const {
       student_name,
+      report_name,
       student_year,
       internship_period,
       company_name,
@@ -60,6 +61,7 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
       const newInternship = await prisma.internshipReport.create({
         data: {
           student_name,
+          report_name,
           student_year,
           internship_period: new Date(internship_period),
           company_name,

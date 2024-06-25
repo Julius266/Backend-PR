@@ -25,6 +25,7 @@ model User {
 
 model InternshipReport {
   id                           Int      @id @default(autoincrement())
+  report_name                  String  
   student_name                 String
   student_year                 String
   internship_period            DateTime
@@ -61,6 +62,7 @@ model InternshipReport {
 
 model SchoolReport {
   id          Int      @id @default(autoincrement())
+  report_name String
   school      String
   date        DateTime
   course      String
