@@ -22,3 +22,56 @@ model User {
   lastname String
   password String
 }
+
+model InternshipReport {
+  id                           Int      @id @default(autoincrement())
+  student_name                 String
+  student_year                 String
+  internship_period            DateTime
+  company_name                 String
+  company_address              String
+  company_phone                String
+  company_fax                  String
+  company_email                String
+  supervisor_name              String
+  supervisor_position          String
+  supervisor_profession        String
+  supervisor_phone             String
+  supervisor_fax               String
+  supervisor_email             String
+  company_description          String
+  company_location             String
+  company_access               String
+  company_resources            String
+  company_economic_activity    String
+  company_organizational_structure String
+  useful_subjects              String
+  missing_topics               String
+  week_1                       String
+  week_2                       String
+  week_3                       String
+  week_4                       String
+  week_5                       String
+  week_6                       String
+  week_7                       String
+  department_name              String
+  objectives                   String
+  specific_functions           String
+}
+
+model SchoolReport {
+  id          Int      @id @default(autoincrement())
+  school      String
+  date        DateTime
+  course      String
+  subject     String
+  student     String
+  title       String
+  objective   String
+  materials   String
+  procedure   String
+  dataResults String
+  analysis    String
+  conclusions String
+  references  String
+}
