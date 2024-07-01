@@ -5,23 +5,23 @@ import intershipRouter from './routes/intership.route';
 import reportRouter from './routes/reportLab.route';
 import { PORT } from './config';
 import cors from 'cors';
-import swaggerUi from "swagger-ui-express";
-import swaggerSetup from "./swagger";
-
-
+import swaggerUi from 'swagger-ui-express';
+import swaggerSetup from './swagger';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/users", usersRouter);
-app.use("/documentation",swaggerUi.serve, swaggerUi.setup(swaggerSetup))
-app.get("/ping", pingRouter);
+// Servir archivos estáticos desde la carpeta "public"
+app.use(express.static('public'));
+
+app.use('/users', usersRouter);
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerSetup));
+app.use('/ping', pingRouter);
 app.use('/intership', intershipRouter);
 app.use('/report', reportRouter);
-  
 
 app.listen(PORT, () => {
-    console.log(`Server is running in port: ${PORT}`);
+  console.log(`Server is running on port: ${PORT}`);
 });
