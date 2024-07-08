@@ -60,7 +60,7 @@ model InternshipReport {
   specific_functions           String
 }
 
-model SchoolReport {
+model ReportLab  {
   id          Int      @id @default(autoincrement())
   report_name String
   school      String
@@ -76,4 +76,34 @@ model SchoolReport {
   analysis    String
   conclusions String
   references  String
+}
+
+
+model EssayReport  {
+id          Int      @id @default(autoincrement()) 
+title String
+author String
+course String
+instructor String
+dueDate DateTime
+abstract String
+introduction String
+body String
+conclusion String
+references String
+}
+
+model ResearchReport  {
+id          Int      @id @default(autoincrement()) 
+researchTitle String
+researchDate DateTime
+researcher String
+advisor String
+abstract String
+introduction String
+methodology String
+results String
+discussion String
+conclusion String
+references String
 }

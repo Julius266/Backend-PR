@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getAllSchoolReports, createSchoolReport } from '../controllers/reportLab.controller';
+import { createReport, getReports } from '../controllers/reportLab.controller';
 
-const reportRouter = Router();
+const router = Router();
 
-reportRouter.get('/all', getAllSchoolReports);
-reportRouter.post('/create', createSchoolReport);
+router.post('/create', createReport);
+router.get('/', getReports);
 
-export default reportRouter;
+export default router;
