@@ -13,7 +13,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   userid        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
@@ -21,6 +20,24 @@ model User {
   name      String
   lastname String
   password String
+}
+
+model ReportLab  {
+  id          Int      @id @default(autoincrement())
+  report_name String
+  school      String
+  date        DateTime
+  course      String
+  subject     String
+  student     String
+  title       String
+  objective   String
+  materials   String
+  procedure   String
+  dataResults String
+  analysis    String
+  conclusions String
+  references  String
 }
 
 model InternshipReport {
@@ -59,25 +76,6 @@ model InternshipReport {
   objectives                   String
   specific_functions           String
 }
-
-model ReportLab  {
-  id          Int      @id @default(autoincrement())
-  report_name String
-  school      String
-  date        DateTime
-  course      String
-  subject     String
-  student     String
-  title       String
-  objective   String
-  materials   String
-  procedure   String
-  dataResults String
-  analysis    String
-  conclusions String
-  references  String
-}
-
 
 model EssayReport  {
 id          Int      @id @default(autoincrement()) 
