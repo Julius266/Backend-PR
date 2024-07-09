@@ -1,11 +1,14 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import puppeteer from 'puppeteer';
+import fs from 'fs';
+import path from 'path';
 
 const prisma = new PrismaClient();
 
 export const createReport = async (req: Request, res: Response) => {
   try {
-    console.log("Solicitud recibida en el servidor:", req.body); // Log para ver los datos recibidos
+    console.log("Solicitud recibida en el servidor:", req.body);
     const {
       report_name,
       school,
@@ -42,11 +45,36 @@ export const createReport = async (req: Request, res: Response) => {
       },
     });
 
-    console.log("Reporte creado en la base de datos:", report); // Log para ver el reporte creado
+    console.log("Reporte creado en la base de datos:", report);
 
-    res.status(201).json(report);
+    const templatePath = path.resolve(__dirname, '../../public/informe-1.html');
+    let template = fs.readFileSync(templatePath, 'utf8');
+    template = template.replace('{{title}}', title)
+                       .replace('{{school}}', school)
+                       .replace('{{date}}', date)
+                       .replace('{{course}}', course)
+                       .replace('{{subject}}', subject)
+                       .replace('{{student}}', student)
+                       .replace('{{objective}}', objective)
+                       .replace('{{materials}}', materials)
+                       .replace('{{procedure}}', procedure)
+                       .replace('{{dataResults}}', dataResults)
+                       .replace('{{analysis}}', analysis)
+                       .replace('{{conclusions}}', conclusions)
+                       .replace('{{references}}', references);
+
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+    const page = await browser.newPage();
+    await page.setContent(template, { waitUntil: 'networkidle0' });
+    const pdfBuffer = await page.pdf({ format: 'A4', timeout: 60000 });
+
+    await browser.close();
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=${report_name}.pdf`);
+    res.send(pdfBuffer);
   } catch (error) {
-    console.error('Error creating report:', error); // Log para ver errores
+    console.error('Error creating report:', error);
     res.status(500).json({ error: 'Error creating report' });
   }
 };

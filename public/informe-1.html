@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Elaboración de un informe de laboratorio ó de Trabajo Práctico</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Laboratorio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            margin: 0 0 10px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+        }
+        .content {
+            padding-left: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <p><strong>Institución:</strong> {{school}}</p>
-    <p><strong>Fecha:</strong> {{date}}</p>
-    <p><strong>Curso:</strong> {{course}}</p>
-    <p><strong>Asignatura:</strong> {{subject}}</p>
-    <p><strong>Alumno:</strong> {{student}}</p>
-    <p><strong>Objetivo:</strong> {{objective}}</p>
-    <p><strong>Materiales:</strong> {{materials}}</p>
-    <p><strong>Procedimiento:</strong> {{procedure}}</p>
-    <p><strong>Resultados de los datos:</strong> {{dataResults}}</p>
-    <p><strong>Análisis:</strong> {{analysis}}</p>
-    <p><strong>Conclusiones:</strong> {{conclusions}}</p>
-    <p><strong>Referencias:</strong> {{references}}</p>
+    <h1>Informe de Laboratorio</h1>
+    
+    <div class="section">
+        <p><span class="section-title">Escuela:</span> {{school}}</p>
+        <p><span class="section-title">Fecha:</span> {{date}}</p>
+        <p><span class="section-title">Curso / División:</span> {{course}}</p>
+        <p><span class="section-title">Asignatura:</span> {{subject}}</p>
+        <p><span class="section-title">Alumno / Integrantes de la Comisión:</span> {{student}}</p>
+    </div>
+
+    <div class="section">
+        <h2>Título</h2>
+        <div class="content">
+            <p>{{title}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Objetivo</h2>
+        <div class="content">
+            <p>{{objective}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Materiales</h2>
+        <div class="content">
+            <p>{{materials}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Procedimiento</h2>
+        <div class="content">
+            <p>{{procedure}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Registro de Datos y Cálculos y Resultados</h2>
+        <div class="content">
+            <p>{{dataResults}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Análisis de Resultados</h2>
+        <div class="content">
+            <p>{{analysis}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Conclusiones</h2>
+        <div class="content">
+            <p>{{conclusions}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Referencias Bibliográficas</h2>
+        <div class="content">
+            <p>{{references}}</p>
+        </div>
+    </div>
 </body>
 </html>
