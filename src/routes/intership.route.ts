@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { getAllInternshipReports } from "../controllers/intership.controller";
-import { createInternshipReport } from "../controllers/intership.controller";
+import { createInternshipReport, getAllInternshipReports } from "../controllers/intership.controller";
 
 const intershipRouter = Router();
 
@@ -133,6 +132,7 @@ intershipRouter.get('/all', getAllInternshipReports);
  *                   example: Internal Server Error
  */
 
-intershipRouter.post ('/create',createInternshipReport);
+intershipRouter.post('/create', createInternshipReport);
+
 
 export default intershipRouter;
