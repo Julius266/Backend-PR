@@ -36,6 +36,8 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
             },
         });
 
+        console.log("Essay report created successfully:", newEssayReport);
+
         const templatePath = path.resolve(__dirname, '../../public/essay-template.html');
         let template = fs.readFileSync(templatePath, 'utf8');
         template = template.replace('{{title}}', title)
@@ -55,6 +57,8 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
         const pdfBuffer = await page.pdf({ format: 'A4', timeout: 60000 });
 
         await browser.close();
+
+        console.log(`PDF for essay report "${title}" generated successfully`);
 
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename=${title}.pdf`);

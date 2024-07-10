@@ -38,6 +38,8 @@ export const createResearchReport = async (req: Request, res: Response): Promise
             },
         });
 
+        console.log("Research report created successfully:", newResearchReport);
+
         const templatePath = path.resolve(__dirname, '../../public/investigation-template.html');
         let template = fs.readFileSync(templatePath, 'utf8');
         template = template.replace('{{researchTitle}}', researchTitle)
@@ -58,6 +60,8 @@ export const createResearchReport = async (req: Request, res: Response): Promise
         const pdfBuffer = await page.pdf({ format: 'A4', timeout: 60000 });
 
         await browser.close();
+
+        console.log(`PDF for research report "${researchTitle}" generated successfully`);
 
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename=${researchTitle}.pdf`);

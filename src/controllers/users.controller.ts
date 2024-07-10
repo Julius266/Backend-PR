@@ -30,6 +30,8 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
       }
     });
 
+    console.log("User created successfully:", newUser);
+
     res.status(201).json({ data: newUser });
   } catch (e) {
     console.log(e);
@@ -55,8 +57,11 @@ export const loginUser = async (req: Request, res: Response) => {
 
     const token = jwt.sign({ userId: user.userid, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
 
+    console.log("User logged in successfully:", { userId: user.userid, email: user.email });
+
     res.json({ token });
   } catch (error) {
+    console.log("Error logging in user:", error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };

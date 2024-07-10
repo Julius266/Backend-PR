@@ -82,6 +82,8 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
             },
         });
 
+        console.log("Internship report created successfully:", newInternship);
+
         const templatePath = path.resolve(__dirname, '../../public/internship-template.html');
         let template = fs.readFileSync(templatePath, 'utf8');
         template = template.replace('{{report_name}}', report_name)
@@ -125,6 +127,8 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
 
         await browser.close();
 
+        console.log(`PDF for internship report "${report_name}" generated successfully`);
+
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename=${report_name}.pdf`);
         res.send(pdfBuffer);
@@ -133,7 +137,6 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
 
 // getAllInterships
 export const getAllInternshipReports = async (req: Request, res: Response): Promise<void> => {
