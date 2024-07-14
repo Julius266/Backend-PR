@@ -43,23 +43,24 @@ export const createSchoolReport = async (req: Request, res: Response): Promise<v
             throw new Error('Invalid date format');
         }
 
-        const newSchoolReport = await prisma.schoolReport.create({
-            data: {
-                school,
-                date: parsedDate,
-                course,
-                subject,
-                student,
-                title,
-                objective,
-                materials,
-                procedure,
-                dataResults,
-                analysis,
-                conclusions,
-                references
-            }
-        });
+        // Crea un nuevo informe escolar
+        // const newSchoolReport = await prisma.schoolReport.create({
+        //     data: {
+        //         school,
+        //         date: parsedDate,
+        //         course,
+        //         subject,
+        //         student,
+        //         title,
+        //         objective,
+        //         materials,
+        //         procedure,
+        //         dataResults,
+        //         analysis,
+        //         conclusions,
+        //         references
+        //     }
+        // });
 
         // Verificar si el archivo de plantilla existe
         if (!fs.existsSync(templatePath)) {
@@ -72,7 +73,7 @@ export const createSchoolReport = async (req: Request, res: Response): Promise<v
 
         // Reemplazar los marcadores en la plantilla HTML con los datos del formulario
         htmlTemplate = htmlTemplate.replace('{{school}}', school)
-            .replace('{{date}}', date)
+            .replace('{{date}}', parsedDate.toDateString()) // Convierte la fecha a cadena
             .replace('{{course}}', course)
             .replace('{{subject}}', subject)
             .replace('{{student}}', student)
