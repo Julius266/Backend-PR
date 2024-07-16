@@ -69,12 +69,11 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
     }
 };
 
-export const getAllEssayReports = async (req: Request, res: Response): Promise<void> => {
+export const getAllEssayReports = async (req: Request, res: Response) => {
     try {
-        const allReports = await prisma.essayReport.findMany();
-        res.status(200).json({ data: allReports });
-    } catch (e) {
-        console.log(e);
-        res.status(500).json({ error: 'Internal Server Error' });
+      const essayReports = await prisma.essayReport.findMany();
+      res.status(200).json(essayReports);
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching essay reports' });
     }
-};
+  };

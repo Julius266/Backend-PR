@@ -78,12 +78,11 @@ export const createReport = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Error creating report' });
   }
 };
-
-export const getReports = async (req: Request, res: Response) => {
+export const getAllReportLabs = async (req: Request, res: Response) => {
   try {
-    const reports = await prisma.reportLab.findMany();
-    res.status(200).json(reports);
+    const reportLabs = await prisma.reportLab.findMany();
+    res.status(200).json(reportLabs);
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching reports' });
+    res.status(500).json({ error: 'Error fetching report labs' });
   }
 };

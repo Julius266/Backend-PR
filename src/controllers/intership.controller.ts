@@ -139,12 +139,11 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
 };
 
 // getAllInterships
-export const getAllInternshipReports = async (req: Request, res: Response): Promise<void> => {
+export const getAllInternshipReports = async (req: Request, res: Response) => {
   try {
-    const allReports = await prisma.internshipReport.findMany();
-    res.status(200).json({ data: allReports });
-  } catch (e) {
-    console.log(e);
-    res.status(500).json({ error: 'Internal Server Error' });
+    const internshipReports = await prisma.internshipReport.findMany();
+    res.status(200).json(internshipReports);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching internship reports' });
   }
 };

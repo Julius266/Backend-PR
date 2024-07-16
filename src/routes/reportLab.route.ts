@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createReport, getReports } from '../controllers/reportLab.controller';
+import { createReport, getAllReportLabs } from '../controllers/reportLab.controller';
 
 const router = Router();
 
@@ -130,6 +130,6 @@ router.post('/create', createReport);
  */
 
 
-router.get('/', getReports);
+router.get('/all', getAllReportLabs);
 
 export default router;
