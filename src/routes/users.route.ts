@@ -3,6 +3,10 @@ import { Router } from "express";
 import { createUser } from "../controllers/users.controller";
 import { getAllUsers } from "../controllers/users.controller";
 import { loginUser } from "../controllers/users.controller";
+import { requestPasswordReset } from "../controllers/users.controller";
+import { resetPassword } from "../controllers/users.controller";
+// import { updateUserPassword } from "../controllers/users.controller";
+
 
 const usersRouter = Router();
 
@@ -192,7 +196,8 @@ usersRouter.post('/login', loginUser);
  *                   example: Internal server error
  */
 
+usersRouter.post('/reset-password', resetPassword);
 
-
+usersRouter.post('/update-password', requestPasswordReset);
 
 export default usersRouter;
