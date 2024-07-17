@@ -67,6 +67,23 @@ export const downloadReportPDF = async (req: Request, res: Response): Promise<vo
         const templatePath = getTemplatePath(reportType);
         let template = fs.readFileSync(templatePath, 'utf8');
 
+        // Formatear fechas
+        for (const key in reportData) {
+            if (Object.prototype.hasOwnProperty.call(reportData, key)) {
+                const value = reportData[key];
+                if (value instanceof Date) {
+                    reportData[key] = new Date(value).toLocaleDateString('es-ES', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                    });
+                } else {
+                    reportData[key] = value;
+                }
+            }
+        }
+
+        // Reemplazar placeholders en la plantilla con los datos del informe
         for (const key in reportData) {
             if (Object.prototype.hasOwnProperty.call(reportData, key)) {
                 template = template.replace(new RegExp(`{{${key}}}`, 'g'), reportData[key] as string);
