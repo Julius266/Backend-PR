@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { createResearchReport, getAllResearchReports } from "../controllers/research.controller";
+import { Router } from 'express';
+import { createResearchReport, getAllResearchReports } from '../controllers/research.controller';
 
 const researchRouter = Router();
 

@@ -82,6 +82,8 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
             },
         });
 
+        console.log("Internship report created successfully:", newInternship);
+
         const templatePath = path.resolve(__dirname, '../../public/internship-template.html');
         let template = fs.readFileSync(templatePath, 'utf8');
         template = template.replace('{{report_name}}', report_name)
@@ -125,6 +127,8 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
 
         await browser.close();
 
+        console.log(`PDF for internship report "${report_name}" generated successfully`);
+
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename=${report_name}.pdf`);
         res.send(pdfBuffer);
@@ -134,14 +138,12 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
     }
 };
 
-
 // getAllInterships
-export const getAllInternshipReports = async (req: Request, res: Response): Promise<void> => {
+export const getAllInternshipReports = async (req: Request, res: Response) => {
   try {
-    const allReports = await prisma.internshipReport.findMany();
-    res.status(200).json({ data: allReports });
-  } catch (e) {
-    console.log(e);
-    res.status(500).json({ error: 'Internal Server Error' });
+    const reports = await prisma.internshipReport.findMany();
+    res.status(200).json(reports);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching internship reports' });
   }
 };

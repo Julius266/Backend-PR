@@ -36,6 +36,8 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
             },
         });
 
+        console.log("Essay report created successfully:", newEssayReport);
+
         const templatePath = path.resolve(__dirname, '../../public/essay-template.html');
         let template = fs.readFileSync(templatePath, 'utf8');
         template = template.replace('{{title}}', title)
@@ -56,6 +58,8 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
 
         await browser.close();
 
+        console.log(`PDF for essay report "${title}" generated successfully`);
+
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', `attachment; filename=${title}.pdf`);
         res.send(pdfBuffer);
@@ -65,12 +69,11 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
     }
 };
 
-export const getAllEssayReports = async (req: Request, res: Response): Promise<void> => {
+export const getAllEssayReports = async (req: Request, res: Response) => {
     try {
-        const allReports = await prisma.essayReport.findMany();
-        res.status(200).json({ data: allReports });
-    } catch (e) {
-        console.log(e);
-        res.status(500).json({ error: 'Internal Server Error' });
+      const reports = await prisma.essayReport.findMany();
+      res.status(200).json(reports);
+    } catch (error) {
+      res.status (500).json({ error: 'Error fetching essay reports' });
     }
-};
+  };
