@@ -71,9 +71,9 @@ export const createEssayReport = async (req: Request, res: Response): Promise<vo
 
 export const getAllEssayReports = async (req: Request, res: Response) => {
     try {
-      const essayReports = await prisma.essayReport.findMany();
-      res.status(200).json(essayReports);
+      const reports = await prisma.essayReport.findMany();
+      res.status(200).json(reports);
     } catch (error) {
-      res.status(500).json({ error: 'Error fetching essay reports' });
+      res.status (500).json({ error: 'Error fetching essay reports' });
     }
   };

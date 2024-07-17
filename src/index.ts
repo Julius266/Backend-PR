@@ -5,7 +5,7 @@ import reportLabRoutes from './routes/reportLab.route';
 import intershipRoutes from './routes/intership.route';
 import researchRoutes from './routes/research.route';
 import essayRoutes from './routes/essay.route';  // Asegúrate de importar las rutas
-
+import reportRoutes from './routes/report.route';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSetup from './swagger';
 
@@ -20,6 +20,7 @@ app.use('/reports', reportLabRoutes);
 app.use('/internship', intershipRoutes);
 app.use('/research', researchRoutes);
 app.use('/essay', essayRoutes);  
+app.use('/reports', reportRoutes);
 app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerSetup));
 app.use(cors({
   origin: 'http://localhost:3000', 

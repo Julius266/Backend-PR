@@ -141,8 +141,8 @@ export const createInternshipReport = async (req: Request, res: Response): Promi
 // getAllInterships
 export const getAllInternshipReports = async (req: Request, res: Response) => {
   try {
-    const internshipReports = await prisma.internshipReport.findMany();
-    res.status(200).json(internshipReports);
+    const reports = await prisma.internshipReport.findMany();
+    res.status(200).json(reports);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching internship reports' });
   }

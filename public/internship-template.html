@@ -7,62 +7,161 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
         }
-        h1, h2 {
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-wrap: break-word; /* Ajuste para evitar que el texto se desborde */
+        }
+        header {
             text-align: center;
+            margin-bottom: 40px;
+            position: relative;
         }
-        p {
-            margin: 0 0 10px 0;
+        header img {
+            width: 300px; /* Aumenta el tamaño del logo */
+            display: block;
+            margin: 0 auto 20px auto; /* Centra el logo y añade margen inferior */
         }
-        .section {
-            margin-bottom: 20px;
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #000000;
+        }
+        header h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #000000;
         }
         .section-title {
-            font-weight: bold;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 5px;
+            color: #000000;
+        }
+        .section-content {
+            margin-bottom: 30px;
+            text-align: justify; /* Justificar el texto */
         }
         .content {
-            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .content h3 {
+            margin: 10px 0;
+            color: #000000;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .signature {
+            text-align: center;
+            width: 45%;
+        }
+        .signature p {
+            margin: 5px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <h1>Informe de Prácticas Pre-Profesionales</h1>
-    
-    <div class="section">
-        <p><span class="section-title">Nombre del Reporte:</span> {{report_name}}</p>
-        <p><span class="section-title">Nombre del Estudiante:</span> {{student_name}}</p>
-        <p><span class="section-title">Año del Estudiante:</span> {{student_year}}</p>
-        <p><span class="section-title">Período de Prácticas:</span> {{internship_period}}</p>
-        <p><span class="section-title">Nombre de la Empresa:</span> {{company_name}}</p>
-        <p><span class="section-title">Dirección de la Empresa:</span> {{company_address}}</p>
-        <p><span class="section-title">Teléfono de la Empresa:</span> {{company_phone}}</p>
-        <p><span class="section-title">Fax de la Empresa:</span> {{company_fax}}</p>
-        <p><span class="section-title">Correo Electrónico de la Empresa:</span> {{company_email}}</p>
-        <p><span class="section-title">Nombre del Supervisor:</span> {{supervisor_name}}</p>
-        <p><span class="section-title">Cargo del Supervisor:</span> {{supervisor_position}}</p>
-        <p><span class="section-title">Profesión del Supervisor:</span> {{supervisor_profession}}</p>
-        <p><span class="section-title">Teléfono del Supervisor:</span> {{supervisor_phone}}</p>
-        <p><span class="section-title">Fax del Supervisor:</span> {{supervisor_fax}}</p>
-        <p><span class="section-title">Correo Electrónico del Supervisor:</span> {{supervisor_email}}</p>
-        <p><span class="section-title">Descripción de la Empresa:</span> {{company_description}}</p>
-        <p><span class="section-title">Ubicación de la Empresa:</span> {{company_location}}</p>
-        <p><span class="section-title">Acceso a la Empresa:</span> {{company_access}}</p>
-        <p><span class="section-title">Recursos de la Empresa:</span> {{company_resources}}</p>
-        <p><span class="section-title">Actividad Económica de la Empresa:</span> {{company_economic_activity}}</p>
-        <p><span class="section-title">Estructura Organizacional de la Empresa:</span> {{company_organizational_structure}}</p>
-        <p><span class="section-title">Asignaturas Útiles:</span> {{useful_subjects}}</p>
-        <p><span class="section-title">Temas Faltantes:</span> {{missing_topics}}</p>
-        <p><span class="section-title">Semana 1:</span> {{week_1}}</p>
-        <p><span class="section-title">Semana 2:</span> {{week_2}}</p>
-        <p><span class="section-title">Semana 3:</span> {{week_3}}</p>
-        <p><span class="section-title">Semana 4:</span> {{week_4}}</p>
-        <p><span class="section-title">Semana 5:</span> {{week_5}}</p>
-        <p><span class="section-title">Semana 6:</span> {{week_6}}</p>
-        <p><span class="section-title">Semana 7:</span> {{week_7}}</p>
-        <p><span class="section-title">Nombre del Departamento:</span> {{department_name}}</p>
-        <p><span class="section-title">Objetivos:</span> {{objectives}}</p>
-        <p><span class="section-title">Funciones Específicas:</span> {{specific_functions}}</p>
+    <div class="container">
+        <header>
+            <img src="https://i.imgur.com/LaWWKiY.png" alt="PUCE Logo">
+            <h1>INFORME DE PRÁCTICAS PRE-PROFESIONALES</h1>
+            <h2>{{company_name}}</h2>
+        </header>
+        
+        <div class="section-content">
+            <div class="content">
+                <h3>CARRERA</h3>
+                <p>{{course}}</p>
+            </div>
+            <div class="content">
+                <h3>ALUMNA</h3>
+                <p>{{student_name}}</p>
+            </div>
+            <div class="content">
+                <h3>SEMESTRE</h3>
+                <p>{{student_year}}</p>
+            </div>
+            <div class="content">
+                <h3>TUTOR DE PRÁCTICAS</h3>
+                <p>{{supervisor_name}}</p>
+            </div>
+            <div class="content">
+                <h3>PERÍODO DE PRÁCTICAS</h3>
+                <p>{{internship_period}}</p>
+            </div>
+            <div class="content">
+                <h3>UBICACIÓN DE LA EMPRESA</h3>
+                <p>{{company_address}}</p>
+            </div>
+            <div class="content">
+                <h3>ÁREAS DE REALIZACIÓN DE LA PRÁCTICA</h3>
+                <p>{{department_name}}</p>
+            </div>
+        </div>
+        
+        <div class="section-title">INTRODUCCIÓN</div>
+        <div class="section-content">
+            <p>{{company_description}}</p>
+        </div>
+
+        <div class="section-title">DESCRIPCIÓN DE ACTIVIDADES</div>
+        <div class="section-content">
+            <div class="content">
+                <h3>Fecha de informe</h3>
+                <p>{{report_date}}</p>
+            </div>
+            <div class="content">
+                <h3>Actividad</h3>
+                <p>{{activity_description}}</p>
+            </div>
+            <div class="content">
+                <h3>Objetivo General</h3>
+                <p>{{objective}}</p>
+            </div>
+        </div>
+
+        <div class="section-title">DESCRIPCIÓN Y REFLEXIONES DE LOS APRENDIZAJES OBTENIDOS</div>
+        <div class="section-content">
+            <p>{{learning_description}}</p>
+        </div>
+
+        <div class="signatures">
+            <div class="signature">
+                <p>_______________________</p>
+                <p>{{supervisor_name}}</p>
+                <p>Tutor de Prácticas</p>
+            </div>
+            <div class="signature">
+                <p>_______________________</p>
+                <p>{{student_name}}</p>
+                <p>Estudiante</p>
+            </div>
+        </div>
     </div>
+    <footer>
+        <p>Informe de Prácticas Pre-Profesionales - {{company_name}} - {{report_date}}</p>
+    </footer>
 </body>
 </html>

@@ -74,8 +74,8 @@ export const createResearchReport = async (req: Request, res: Response): Promise
 
 export const getAllResearchReports = async (req: Request, res: Response) => {
     try {
-      const researchReports = await prisma.researchReport.findMany();
-      res.status(200).json(researchReports);
+      const reports = await prisma.researchReport.findMany();
+      res.status(200).json(reports);
     } catch (error) {
       res.status(500).json({ error: 'Error fetching research reports' });
     }

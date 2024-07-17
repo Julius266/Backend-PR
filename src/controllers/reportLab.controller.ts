@@ -47,7 +47,7 @@ export const createReport = async (req: Request, res: Response) => {
 
     console.log("Reporte creado en la base de datos:", report);
 
-    const templatePath = path.resolve(__dirname, '../../public/informe-1.html');
+    const templatePath = path.resolve(__dirname, '../../public/informeLab-template.html');
     let template = fs.readFileSync(templatePath, 'utf8');
     template = template.replace('{{title}}', title)
                        .replace('{{school}}', school)
@@ -78,10 +78,11 @@ export const createReport = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Error creating report' });
   }
 };
+
 export const getAllReportLabs = async (req: Request, res: Response) => {
   try {
-    const reportLabs = await prisma.reportLab.findMany();
-    res.status(200).json(reportLabs);
+    const reports = await prisma.reportLab.findMany();
+    res.status(200).json(reports);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching report labs' });
   }
