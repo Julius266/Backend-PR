@@ -7,71 +7,39 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            color: #333;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            margin: 40px;
+            background-color: #f4f4f9; /* Color de fondo */
+            color: #333; /* Color del texto */
         }
-        header {
+        h1, h2 {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        header img {
-            width: 300px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #003366;
-            font-size: 28px;
-        }
-        h2 {
-            text-align: left;
-            color: #003366;
-            font-size: 24px;
-            margin-top: 20px;
-            border-bottom: 2px solid #003366;
-            padding-bottom: 5px;
+            color: #2c3e50; /* Color de los títulos */
         }
         p {
             margin: 0 0 10px 0;
+            text-align: justify; /* Justificar el texto */
+            max-width: 100%; /* Controlar el ancho del contenido */
+            word-wrap: break-word; /* Ajustar palabras largas */
         }
         .section {
             margin-bottom: 20px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #ffffff; /* Fondo blanco para secciones */
+            border: 1px solid #ddd; /* Borde de las secciones */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
         }
         .section-title {
             font-weight: bold;
-            color: #003366;
-            margin-top: 20px;
+            color: #3e9dc2; /* Color de los títulos de las secciones */
         }
         .content {
             padding-left: 15px;
-            text-align: justify;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .data-table th, .data-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        .data-table th {
-            background-color: #003366;
-            color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://i.imgur.com/LaWWKiY.png" alt="PUCE Logo">
-        <h1>Informe de Laboratorio</h1>
-    </header>
+    <h1>Informe de Laboratorio</h1>
     
     <div class="section">
         <p><span class="section-title">Escuela:</span> {{school}}</p>

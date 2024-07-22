@@ -7,113 +7,79 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            color: #333;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            text-align: justify;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        header img {
-            width: 300px;
-            display: block;
-            margin: 0 auto 20px auto;
+            margin: 40px;
+            background-color: #f4f4f9; /* Color de fondo */
+            color: #333; /* Color del texto */
         }
         h1, h2 {
-            color: #003366;
             text-align: center;
-        }
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #003366;
-            padding-bottom: 10px;
+            color: #2c3e50; /* Color de los títulos */
         }
         p {
             margin: 0 0 10px 0;
+            text-align: justify; /* Justificar el texto */
+            max-width: 100%; /* Controlar el ancho del contenido */
+            word-wrap: break-word; /* Ajustar palabras largas */
         }
         .section {
             margin-bottom: 20px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #ffffff; /* Fondo blanco para secciones */
+            border: 1px solid #ddd; /* Borde de las secciones */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
         }
         .section-title {
             font-weight: bold;
-            color: #003366;
+            color: #3e9dc2; /* Color de los títulos de las secciones */
         }
         .content {
             padding-left: 15px;
         }
-        .references {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .references li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://i.imgur.com/LaWWKiY.png" alt="PUCE Logo">
-            <h1>{{title}}</h1>
-        </header>
-        
-        <div class="section">
-            <p><span class="section-title">Autor:</span> {{author}}</p>
-            <p><span class="section-title">Curso:</span> {{course}}</p>
-            <p><span class="section-title">Instructor:</span> {{instructor}}</p>
-            <p><span class="section-title">Fecha de Entrega:</span> {{dueDate}}</p>
-        </div>
+    <h1>{{title}}</h1>
+    
+    <div class="section">
+        <p><span class="section-title">Autor:</span> {{author}}</p>
+        <p><span class="section-title">Curso:</span> {{course}}</p>
+        <p><span class="section-title">Instructor:</span> {{instructor}}</p>
+        <p><span class="section-title">Fecha de Entrega:</span> {{dueDate}}</p>
+    </div>
 
-        <div class="section">
-            <h2>Resumen</h2>
-            <div class="content">
-                <p>{{abstract}}</p>
-            </div>
+    <div class="section">
+        <h2>Resumen</h2>
+        <div class="content">
+            <p>{{abstract}}</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>Introducción</h2>
-            <div class="content">
-                <p>{{introduction}}</p>
-            </div>
+    <div class="section">
+        <h2>Introducción</h2>
+        <div class="content">
+            <p>{{introduction}}</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>Desarrollo</h2>
-            <div class="content">
-                <p>{{body}}</p>
-            </div>
+    <div class="section">
+        <h2>Desarrollo</h2>
+        <div class="content">
+            <p>{{body}}</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>Conclusión</h2>
-            <div class="content">
-                <p>{{conclusion}}</p>
-            </div>
+    <div class="section">
+        <h2>Conclusión</h2>
+        <div class="content">
+            <p>{{conclusion}}</p>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>Referencias</h2>
-            <div class="content">
-                <ul class="references">
-                    <li>{{references}}</li>
-                </ul>
-            </div>
+    <div class="section">
+        <h2>Referencias</h2>
+        <div class="content">
+            <p>{{references}}</p>
         </div>
     </div>
 </body>

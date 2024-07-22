@@ -6,171 +6,75 @@
     <title>Informe de Prácticas Pre-Profesionales</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9; /* Color de fondo */
+            color: #333; /* Color del texto */
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        header {
+        h1, h2 {
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #1a237e;
-            padding-bottom: 20px;
+            color: #2c3e50; /* Color de los títulos */
         }
-        header img {
-            width: 150px;
+        p {
+            margin: 0 0 10px 0;
+            text-align: justify; /* Justificar el texto */
+            max-width: 100%; /* Controlar el ancho del contenido */
+            word-wrap: break-word; /* Ajustar palabras largas */
+        }
+        .section {
             margin-bottom: 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #1a237e;
-            text-transform: uppercase;
-        }
-        header h2 {
-            margin: 0;
-            font-size: 20px;
-            color: #3949ab;
+            padding: 10px;
+            background-color: #ffffff; /* Fondo blanco para secciones */
+            border: 1px solid #ddd; /* Borde de las secciones */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
         }
         .section-title {
-            font-size: 22px;
-            margin-top: 40px;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #1a237e;
-            padding-bottom: 5px;
-            color: #1a237e;
-        }
-        .section-content {
-            margin-bottom: 30px;
-            padding: 10px;
-            background-color: #f0f4f8;
-            border-radius: 8px;
+            font-weight: bold;
+            color: #3e9dc2; /* Color de los títulos de las secciones */
         }
         .content {
-            margin-bottom: 20px;
-        }
-        .content h3 {
-            margin: 10px 0;
-            color: #3949ab;
-            font-size: 18px;
-        }
-        .content p {
-            margin: 5px 0;
-            text-align: justify;
-        }
-        .signatures {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-        }
-        .signature {
-            text-align: center;
-            width: 45%;
-        }
-        .signature p {
-            margin: 5px 0;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 12px;
-            color: #888;
-        }
-        ul {
-            margin: 0;
-            padding: 0 0 0 20px;
+            padding-left: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://i.imgur.com/LaWWKiY.png" alt="PUCE Logo">
-            <h1>Informe de Prácticas Pre-Profesionales</h1>
-            <h2>{{company_name}}</h2>
-        </header>
-        
-        <div class="section-content">
-            <div class="content">
-                <h3>Carrera</h3>
-                <p>{{course}}</p>
-            </div>
-            <div class="content">
-                <h3>Alumno</h3>
-                <p>{{student_name}}</p>
-            </div>
-            <div class="content">
-                <h3>Semestre</h3>
-                <p>{{student_year}}</p>
-            </div>
-            <div class="content">
-                <h3>Tutor de Prácticas</h3>
-                <p>{{supervisor_name}}</p>
-            </div>
-            <div class="content">
-                <h3>Período de Prácticas</h3>
-                <p>{{internship_period}}</p>
-            </div>
-            <div class="content">
-                <h3>Ubicación de la Empresa</h3>
-                <p>{{company_address}}</p>
-            </div>
-            <div class="content">
-                <h3>Áreas de Realización de la Práctica</h3>
-                <p>{{department_name}}</p>
-            </div>
-        </div>
-        
-        <div class="section-title">Introducción</div>
-        <div class="section-content">
-            <p>{{company_description}}</p>
-        </div>
-
-        <div class="section-title">Descripción de Actividades</div>
-        <div class="section-content">
-            <div class="content">
-                <h3>Fecha de Informe</h3>
-                <p>{{report_date}}</p>
-            </div>
-            <div class="content">
-                <h3>Actividad</h3>
-                <p>{{activity_description}}</p>
-            </div>
-            <div class="content">
-                <h3>Objetivo General</h3>
-                <p>{{objective}}</p>
-            </div>
-        </div>
-
-        <div class="section-title">Descripción y Reflexiones de los Aprendizajes Obtenidos</div>
-        <div class="section-content">
-            <p>{{learning_description}}</p>
-        </div>
-
-        <div class="signatures">
-            <div class="signature">
-                <p>_______________________</p>
-                <p>{{supervisor_name}}</p>
-                <p>Tutor de Prácticas</p>
-            </div>
-            <div class="signature">
-                <p>_______________________</p>
-                <p>{{student_name}}</p>
-                <p>Estudiante</p>
-            </div>
-        </div>
+    <h1>Informe de Prácticas Pre-Profesionales</h1>
+    
+    <div class="section">
+        <p><span class="section-title">Nombre del Reporte:</span> {{report_name}}</p>
+        <p><span class="section-title">Nombre del Estudiante:</span> {{student_name}}</p>
+        <p><span class="section-title">Año del Estudiante:</span> {{student_year}}</p>
+        <p><span class="section-title">Período de Prácticas:</span> {{internship_period}}</p>
+        <p><span class="section-title">Nombre de la Empresa:</span> {{company_name}}</p>
+        <p><span class="section-title">Dirección de la Empresa:</span> {{company_address}}</p>
+        <p><span class="section-title">Teléfono de la Empresa:</span> {{company_phone}}</p>
+        <p><span class="section-title">Fax de la Empresa:</span> {{company_fax}}</p>
+        <p><span class="section-title">Correo Electrónico de la Empresa:</span> {{company_email}}</p>
+        <p><span class="section-title">Nombre del Supervisor:</span> {{supervisor_name}}</p>
+        <p><span class="section-title">Cargo del Supervisor:</span> {{supervisor_position}}</p>
+        <p><span class="section-title">Profesión del Supervisor:</span> {{supervisor_profession}}</p>
+        <p><span class="section-title">Teléfono del Supervisor:</span> {{supervisor_phone}}</p>
+        <p><span class="section-title">Fax del Supervisor:</span> {{supervisor_fax}}</p>
+        <p><span class="section-title">Correo Electrónico del Supervisor:</span> {{supervisor_email}}</p>
+        <p><span class="section-title">Descripción de la Empresa:</span> {{company_description}}</p>
+        <p><span class="section-title">Ubicación de la Empresa:</span> {{company_location}}</p>
+        <p><span class="section-title">Acceso a la Empresa:</span> {{company_access}}</p>
+        <p><span class="section-title">Recursos de la Empresa:</span> {{company_resources}}</p>
+        <p><span class="section-title">Actividad Económica de la Empresa:</span> {{company_economic_activity}}</p>
+        <p><span class="section-title">Estructura Organizacional de la Empresa:</span> {{company_organizational_structure}}</p>
+        <p><span class="section-title">Asignaturas Útiles:</span> {{useful_subjects}}</p>
+        <p><span class="section-title">Temas Faltantes:</span> {{missing_topics}}</p>
+        <p><span class="section-title">Semana 1:</span> {{week_1}}</p>
+        <p><span class="section-title">Semana 2:</span> {{week_2}}</p>
+        <p><span class="section-title">Semana 3:</span> {{week_3}}</p>
+        <p><span class="section-title">Semana 4:</span> {{week_4}}</p>
+        <p><span class="section-title">Semana 5:</span> {{week_5}}</p>
+        <p><span class="section-title">Semana 6:</span> {{week_6}}</p>
+        <p><span class="section-title">Semana 7:</span> {{week_7}}</p>
+        <p><span class="section-title">Nombre del Departamento:</span> {{department_name}}</p>
+        <p><span class="section-title">Objetivos:</span> {{objectives}}</p>
+        <p><span class="section-title">Funciones Específicas:</span> {{specific_functions}}</p>
     </div>
-    <footer>
-        <p>Informe de Prácticas Pre-Profesionales - {{company_name}} - {{report_date}}</p>
-    </footer>
 </body>
 </html>
