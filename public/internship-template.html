@@ -16,29 +16,41 @@
             color: #2c3e50; /* Color de los títulos */
         }
         p {
-            margin: 0 0 10px 0;
+            margin: 0 0 15px 0; /* Margen inferior más grande para espacio entre párrafos */
             text-align: justify; /* Justificar el texto */
             max-width: 100%; /* Controlar el ancho del contenido */
             word-wrap: break-word; /* Ajustar palabras largas */
+            line-height: 1.6; /* Altura de línea para mejor legibilidad */
         }
         .section {
-            margin-bottom: 20px;
-            padding: 10px;
+            margin-bottom: 30px; /* Espacio entre secciones */
+            padding: 20px; /* Relleno dentro de las secciones */
             background-color: #ffffff; /* Fondo blanco para secciones */
             border: 1px solid #ddd; /* Borde de las secciones */
             border-radius: 5px; /* Bordes redondeados */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+            page-break-inside: avoid; /* Evitar saltos de página dentro de la sección */
         }
         .section-title {
             font-weight: bold;
             color: #3e9dc2; /* Color de los títulos de las secciones */
+            margin-bottom: 10px; /* Margen inferior del título de la sección */
         }
         .content {
             padding-left: 15px;
         }
+        .header-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 400px; /* Ajusta el tamaño máximo de la imagen */
+            height: auto;
+        }
     </style>
 </head>
 <body>
+    <img src="https://i.imgur.com/LaWWKiY.png" alt="Encabezado" class="header-img">
     <h1>Informe de Prácticas Pre-Profesionales</h1>
     
     <div class="section">
