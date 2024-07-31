@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla de Ensayo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
+            font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+            margin: 40px; /* Márgenes más grandes para el cuerpo */
             background-color: #f4f4f9; /* Color de fondo */
             color: #333; /* Color del texto */
-        }
-        h1, h2 {
-            text-align: center;
-            color: #2c3e50; /* Color de los títulos */
-        }
-        p {
-            margin: 0 0 15px 0; /* Margen inferior más grande para espacio entre párrafos */
-            text-align: justify; /* Justificar el texto */
-            max-width: 100%; /* Controlar el ancho del contenido */
-            word-wrap: break-word; /* Ajustar palabras largas */
+            font-size: 16px; /* Tamaño de fuente más grande */
             line-height: 1.6; /* Altura de línea para mejor legibilidad */
         }
+        h1 {
+            font-size: 2.5em; /* Tamaño de fuente del título principal */
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2em; /* Tamaño de fuente de los subtítulos */
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 0 0 20px 0; /* Margen inferior más grande para espacio entre párrafos */
+            text-align: justify; /* Justificar el texto */
+        }
         .section {
-            margin-bottom: 30px; /* Espacio entre secciones */
-            padding: 20px; /* Relleno dentro de las secciones */
-            background-color: #ffffff; /* Fondo blanco para secciones */
-            border: 1px solid #ddd; /* Borde de las secciones */
-            border-radius: 5px; /* Bordes redondeados */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+            margin-bottom: 50px; /* Espacio entre secciones */
+            padding: 20px 30px; /* Relleno dentro de las secciones */
+            background-color: #ffffffe7; /* Fondo blanco para secciones */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10); /* Sombra para las secciones */
+            max-width: 100%; /* Ancho máximo de las secciones */
             page-break-inside: avoid; /* Evitar saltos de página dentro de la sección */
         }
         .section-title {
@@ -36,62 +42,68 @@
             color: #3e9dc2; /* Color de los títulos de las secciones */
             margin-bottom: 10px; /* Margen inferior del título de la sección */
         }
-        .content {
-            padding-left: 15px;
-        }
         .header-img {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px auto; /* Márgenes superiores e inferiores más grandes para la imagen */
             width: 100%;
             max-width: 400px; /* Ajusta el tamaño máximo de la imagen */
             height: auto;
         }
+        .container {
+            margin: auto;
+            padding: 0 40px; /* Asegurar que haya margen suficiente a los lados */
+            max-width: 800px; /* Ancho máximo del contenido */
+        }
+        .icon {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
-    <img src="https://i.imgur.com/LaWWKiY.png" alt="Encabezado" class="header-img">
-    <h1>{{title}}</h1>
-    
-    <div class="section">
-        <p><span class="section-title">Autor:</span> {{author}}</p>
-        <p><span class="section-title">Curso:</span> {{course}}</p>
-        <p><span class="section-title">Instructor:</span> {{instructor}}</p>
-        <p><span class="section-title">Fecha de Entrega:</span> {{dueDate}}</p>
-    </div>
-
-    <div class="section">
-        <h2>Resumen</h2>
-        <div class="content">
-            <p>{{abstract}}</p>
+    <div class="container">
+        <img src="https://i.imgur.com/LaWWKiY.png" alt="Encabezado" class="header-img">
+        <h1>{{title}}</h1>
+        
+        <div class="section">
+            <p><span class="section-title"><i class="fas fa-user icon"></i>Autor:</span> {{author}}</p>
+            <p><span class="section-title"><i class="fas fa-book icon"></i>Curso:</span> {{course}}</p>
+            <p><span class="section-title"><i class="fas fa-chalkboard-teacher icon"></i>Instructor:</span> {{instructor}}</p>
+            <p><span class="section-title"><i class="fas fa-calendar-alt icon"></i>Fecha de Entrega:</span> {{dueDate}}</p>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Introducción</h2>
-        <div class="content">
-            <p>{{introduction}}</p>
+        <div class="section">
+            <h2>Resumen</h2>
+            <div class="content">
+                <p>{{abstract}}</p>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Desarrollo</h2>
-        <div class="content">
-            <p>{{body}}</p>
+        <div class="section">
+            <h2>Introducción</h2>
+            <div class="content">
+                <p>{{introduction}}</p>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Conclusión</h2>
-        <div class="content">
-            <p>{{conclusion}}</p>
+        <div class="section">
+            <h2>Desarrollo</h2>
+            <div class="content">
+                <p>{{body}}</p>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Referencias</h2>
-        <div class="content">
-            <p>{{references}}</p>
+        <div class="section">
+            <h2>Conclusión</h2>
+            <div class="content">
+                <p>{{conclusion}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Referencias</h2>
+            <div class="content">
+                <p>{{references}}</p>
+            </div>
         </div>
     </div>
 </body>

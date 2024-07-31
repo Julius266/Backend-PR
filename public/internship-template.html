@@ -4,70 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe de Prácticas Pre-Profesionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @page {
             margin: 40px 20px; /* Márgenes de la página */
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Fuente Roboto */
             margin: 0; /* Eliminar márgenes por defecto del body */
             padding: 0; /* Eliminar padding por defecto del body */
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f4f4f9; /* Color de fondo */
+            color: #333; /* Color del texto */
+            font-size: 16px; /* Tamaño de fuente más grande */
+            line-height: 1.6; /* Altura de línea para mejor legibilidad */
         }
         h1, h2 {
             text-align: center;
-            color: #2c3e50;
+            color: #2c3e50; /* Color de los títulos */
         }
         p {
-            margin: 0 0 10px 0;
-            text-align: justify;
-            max-width: 100%;
-            word-wrap: break-word;
+            margin: 0 0 10px 0; /* Margen inferior para espacio entre párrafos */
+            text-align: justify; /* Justificar el texto */
+            max-width: 100%; /* Controlar el ancho del contenido */
+            word-wrap: break-word; /* Ajustar palabras largas */
         }
         .section {
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0; /* Reducir espacio entre secciones */
+            padding: 15px 25px; /* Ajustar relleno dentro de las secciones */
+            background-color: #ffffffe7; /* Fondo blanco para secciones */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10); /* Sombra para las secciones */
             page-break-inside: avoid; /* Evitar saltos de página dentro de la sección */
         }
         .section-title {
             font-weight: bold;
-            color: #3e9dc2;
+            color: #3e9dc2; /* Color de los títulos de las secciones */
+            margin-bottom: 10px; /* Margen inferior del título de la sección */
+            font-size: 16px; /* Ajustar tamaño de fuente */
         }
         .content {
             padding-left: 15px;
         }
         table {
-            width: 100%;
-            border-collapse: collapse;
+            width: 100%; /* Ancho completo de la tabla */
+            border-collapse: collapse; /* Colapsar bordes */
             margin-bottom: 20px;
         }
         table, th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            border: 1px solid #ddd; /* Bordes de la tabla */
+            padding: 8px; /* Espaciado interno */
             word-wrap: break-word; /* Ajustar palabras largas en celdas */
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #f2f2f2; /* Fondo de encabezados de tabla */
         }
         .page-break {
             page-break-after: always;
         }
         .cover-section {
             text-align: center;
-            margin: 100px 0;
+            margin: 60px 0; /* Ajustar margen para la portada */
         }
         .cover-section p {
-            font-size: 18px;
+            font-size: 16px; /* Ajustar tamaño de fuente */
             line-height: 1.6;
         }
         .cover-section .section-title {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 18px; /* Ajustar tamaño de fuente */
+            margin-bottom: 10px;
         }
         .table-section {
             margin: 20px 0;
@@ -80,20 +85,32 @@
             max-width: 100%;
             height: auto;
         }
+        .icon {
+            margin-right: 10px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .list-item i {
+            margin-right: 10px;
+            color: #3e9dc2;
+        }
     </style>
 </head>
 <body>
     <div class="logo">
-        <img src="/home/juan-daza/Desktop/PractiiceReport/PR-FRONT/practiie-report/public/logo-img.png" alt="PUCE Manabí">
+        <img src="https://i.imgur.com/LaWWKiY.png" alt="PUCE Manabí">
     </div>
     <h1>Informe de Prácticas Pre-Profesionales</h1>
 
     <div class="section cover-section">
         <h2>Referencia de la Entidad Contraparte</h2>
-        <p><span class="section-title">Nombre del Reporte:</span> {{report_name}}</p>
-        <p><span class="section-title">Nombre del Estudiante:</span> {{student_name}}</p>
-        <p><span class="section-title">Año del Estudiante:</span> {{student_year}}</p>
-        <p><span class="section-title">Período de Prácticas:</span> {{internship_period}}</p>
+        <p><span class="section-title"><i class="fas fa-file-alt icon"></i>Nombre del Reporte:</span> <span>{{report_name}}</span></p>
+        <p><span class="section-title"><i class="fas fa-user icon"></i>Nombre del Estudiante:</span> <span>{{student_name}}</span></p>
+        <p><span class="section-title"><i class="fas fa-graduation-cap icon"></i>Año del Estudiante:</span> <span>{{student_year}}</span></p>
+        <p><span class="section-title"><i class="fas fa-calendar-alt icon"></i>Período de Prácticas:</span> <span>{{internship_period}}</span></p>
     </div>
 
     <div class="section">
@@ -154,14 +171,16 @@
 
     <div class="section">
         <h2>Descripción de la Empresa</h2>
-        <p><span class="section-title">Descripción de la Empresa:</span> {{company_description}}</p>
-        <p><span class="section-title">Ubicación de la Empresa:</span> {{company_location}}</p>
-        <p><span class="section-title">Acceso a la Empresa:</span> {{company_access}}</p>
-        <p><span class="section-title">Recursos de la Empresa:</span> {{company_resources}}</p>
-        <p><span class="section-title">Actividad Económica de la Empresa:</span> {{company_economic_activity}}</p>
-        <p><span class="section-title">Estructura Organizacional de la Empresa:</span> {{company_organizational_structure}}</p>
-        <p><span class="section-title">Asignaturas Útiles:</span> {{useful_subjects}}</p>
-        <p><span class="section-title">Temas Faltantes:</span> {{missing_topics}}</p>
+        <div class="content">
+            <div class="list-item"><i class="fas fa-building"></i> <span><b>Descripción de la Empresa:</b> {{company_description}}</span></div>
+            <div class="list-item"><i class="fas fa-map-marker-alt"></i> <span><b>Ubicación de la Empresa:</b> {{company_location}}</span></div>
+            <div class="list-item"><i class="fas fa-road"></i> <span><b>Acceso a la Empresa:</b> {{company_access}}</span></div>
+            <div class="list-item"><i class="fas fa-warehouse"></i> <span><b>Recursos de la Empresa:</b> {{company_resources}}</span></div>
+            <div class="list-item"><i class="fas fa-chart-line"></i> <span><b>Actividad Económica de la Empresa:</b> {{company_economic_activity}}</span></div>
+            <div class="list-item"><i class="fas fa-sitemap"></i> <span><b>Estructura Organizacional de la Empresa:</b> {{company_organizational_structure}}</span></div>
+            <div class="list-item"><i class="fas fa-book"></i> <span><b>Asignaturas Útiles:</b> {{useful_subjects}}</span></div>
+            <div class="list-item"><i class="fas fa-book-reader"></i> <span><b>Temas Faltantes:</b> {{missing_topics}}</span></div>
+        </div>
     </div>
 
     <div class="section table-section">
